@@ -1,0 +1,48 @@
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+
+local anims = {
+    "rbxassetid://107886984027152",
+    "rbxassetid://100942177156557",
+}
+
+
+local fireRemote = ReplicatedStorage:WaitForChild("Events"):WaitForChild("Fire")
+
+
+local function fireThreePointer()
+    local args = {
+        "Fire",
+        {
+            Stat = "ThreePointer",
+            Timing = 98.11537496419623,
+            Hand = "L"
+        }
+    }
+    fireRemote:FireServer(unpack(args))
+end
+
+
+local function onCharacterAdded(character)
+    local humanoid = character:WaitForChild("Humanoid")
+    
+    humanoid.AnimationPlayed:Connect(function(animTrack)
+        if getgenv().toggle then
+            for _, animId in ipairs(anims) do
+                if animTrack.Animation.AnimationId == animId then
+                    wait(0.2)
+                    fireThreePointer()
+                    break
+                end
+            end
+        end
+    end)
+end
+
+
+if LocalPlayer.Character then
+    onCharacterAdded(LocalPlayer.Character)
+end
+LocalPlayer.CharacterAdded:Connect(onCharacterAdded)
