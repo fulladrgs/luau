@@ -810,7 +810,7 @@ do
 
 			local Logo = Instance.new("ImageLabel")
 			Logo.Name = "Logo"
-			Logo.Image = "http://www.roblox.com/asset/?id=134495527177916"
+			Logo.Image = "http://www.roblox.com/asset/?id=139008674929242"
 			Logo.ScaleType = Enum.ScaleType.Fit
 			Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			Logo.BackgroundTransparency = 1
@@ -2561,7 +2561,7 @@ do
 		--
 		function Library:Watermark(Properties)
 			local Watermark = {
-				Name = (Properties.Name or Properties.name or "Blossom | placeholder");
+				Name = (Properties.Name or Properties.name or "/glo | placeholder");
 				AnimateText = nil;
 			}
 			--
@@ -2627,14 +2627,14 @@ do
 			
 			task.spawn(function()
 				while task.wait() do
-					for i = 1, #"Blossom.club" do
-						Watermark.AnimateText = string.sub("Blossom.club", 1, i) .. "";
+					for i = 1, #"/glo.club" do
+						Watermark.AnimateText = string.sub("/glo.club", 1, i) .. "";
 						Title.Text = Watermark.AnimateText .. " " .. Watermark.Name;
 						task.wait(0.4);
 					end;
 
-					for i = #"Blossom.club" - 1, 1, -1 do
-						Watermark.AnimateText = string.sub("Blossom.club", 1, i) .. "";
+					for i = #"/glo.club" - 1, 1, -1 do
+						Watermark.AnimateText = string.sub("/glo.club", 1, i) .. "";
 						Title.Text = Watermark.AnimateText .. " " .. Watermark.Name;
 						task.wait(0.4);
 					end;
