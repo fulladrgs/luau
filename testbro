@@ -7,7 +7,7 @@
 ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝ ╚════╝ 
 --]]
 
-local library = loadstring(game:HttpGet("https://pastebin.com/raw/uZRyfbMt"))()
+local library = loadstring(game:HttpGet("https://pastebin.com/raw/XsK1EkTR"))()
 
 
 local Notif = library:InitNotifications()
